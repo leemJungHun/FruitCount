@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".game.GameActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:transitionName="sharedImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_howmuch_step9"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:transitionName="text1"
+            style="@style/game_level_icon_style"
+            android:id="@+id/levelImgView"
+            tools:text="1단계"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <com.example.fruitcount.customview.OutlineTextView
+            android:id="@+id/timerTxtView"
+            android:transitionName="text2"
+            app:layout_constraintTop_toTopOf="@id/showMenuImgView"
+            app:layout_constraintBottom_toBottomOf="@id/showMenuImgView"
+            app:layout_constraintEnd_toStartOf="@id/showMenuImgView"
+            android:textColor="@color/white"
+            app:textStroke="true"
+            app:textStrokeWidth="@dimen/dp_4"
+            app:textStrokeColor="@color/color_text"
+            android:text="00 : 04"
+            android:textSize="@dimen/sp_48"
+            android:fontFamily="@font/aabstract_groovy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/showMenuImgView"
+            style="@style/game_close_btn"
+            android:src="@drawable/btn_game_001_close"
+            android:tint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--        <VideoView
+                    android:id="@+id/originTutorialView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />-->
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/answerSelectTxtView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:fontFamily="@font/maplestory_oft_bold"
+            android:background="@drawable/img_calculation_box_s"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/answerSelectTxtView2"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/answerSelectTxtView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:fontFamily="@font/maplestory_oft_bold"
+            android:background="@drawable/img_calculation_box_s"
+            app:layout_constraintStart_toEndOf="@id/answerSelectTxtView1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/answerSelectTxtView3"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/answerSelectTxtView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:fontFamily="@font/maplestory_oft_bold"
+            android:background="@drawable/img_calculation_box_s"
+            app:layout_constraintStart_toEndOf="@id/answerSelectTxtView2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/answerSelectTxtView4"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/answerSelectTxtView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:fontFamily="@font/maplestory_oft_bold"
+            android:background="@drawable/img_calculation_box_s"
+            app:layout_constraintStart_toEndOf="@id/answerSelectTxtView3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/gameListView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/answerSelectTxtView3"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/screenView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
